@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dx6dxfqio87pd"]
+
+[ext_resource type="Theme" uid="uid://c20k6fqm1r5yx" path="res://addons/veracity/ui/ui_theme.tres" id="1_tb8tq"]
+[ext_resource type="Script" uid="uid://buf6glb5tremh" path="res://addons/veracity/ui/dock/veracity_dock_error_ui.gd" id="2_cw1qh"]
+
+[node name="ErrorUI" type="MarginContainer" unique_id=5964328]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tb8tq")
+script = ExtResource("2_cw1qh")
+
+[node name="Panel" type="Panel" parent="." unique_id=1643449469]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel" unique_id=1809977080]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/Button" unique_id=1976476045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ErrorLabel" type="RichTextLabel" parent="Panel/Button/MarginContainer" unique_id=1943026102]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=red]ERROR!"
+fit_content = true

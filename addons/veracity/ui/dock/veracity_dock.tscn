@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dks4nhtvka0mu"]
+
+[ext_resource type="Theme" uid="uid://c20k6fqm1r5yx" path="res://addons/veracity/ui/ui_theme.tres" id="1_202h5"]
+[ext_resource type="Script" uid="uid://nthjcnf5sssa" path="res://addons/veracity/ui/dock/veracity_dock.gd" id="2_fw4gd"]
+[ext_resource type="PackedScene" uid="uid://dx6dxfqio87pd" path="res://addons/veracity/ui/dock/veracity_dock_error_ui.tscn" id="3_4cl51"]
+
+[node name="VeracityDock" type="Control" unique_id=1042007318]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_202h5")
+script = ExtResource("2_fw4gd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1873591477]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=699226541]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=445362356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NoErrorsUI" type="Panel" parent="MarginContainer/Panel/MarginContainer" unique_id=564633516]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="NoErrorsLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/NoErrorsUI" unique_id=194862954]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "No pseudo-compilation errors :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorsUI" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=1951213548]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/ErrorsUI" unique_id=506947298]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/ErrorsUI/Panel" unique_id=1232248362]
+custom_minimum_size = Vector2(0, 40)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -566.0
+offset_top = -25.0
+offset_right = 566.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/ErrorsUI/Panel/MarginContainer" unique_id=913710981]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Pseudo-compilation errors (4):"
+fit_content = true
+vertical_alignment = 1
+
+[node name="ErrorUIList" type="Panel" parent="MarginContainer/Panel/MarginContainer/ErrorsUI" unique_id=1365431326]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ErrorUI" parent="MarginContainer/Panel/MarginContainer/ErrorsUI/ErrorUIList" unique_id=5964328 instance=ExtResource("3_4cl51")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 1127.0
+offset_bottom = 569.0
+grow_horizontal = 1
+grow_vertical = 1
